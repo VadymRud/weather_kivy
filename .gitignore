@@ -1,3 +1,11 @@
+.buildozer
+#buildozer.spec
+bin
+.idea/preferred-vcs.xml
+*.iml
+.idea/*.xml
+.idea/*.iml
+clock.ini
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -29,7 +37,7 @@ wheels/
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
-*.spec
+#*.spec
 
 # Installer logs
 pip-log.txt
