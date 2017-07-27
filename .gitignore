@@ -3,8 +3,8 @@ key.py
 #buildozer.spec
 bin
 *.iml
-.idea/*.xml
-.idea/*.iml
+.idea
+
 .idea/preferred-vcs.xml
 
 
