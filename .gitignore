@@ -1,10 +1,13 @@
+key.py
 .buildozer
 #buildozer.spec
 bin
-.idea/preferred-vcs.xml
 *.iml
 .idea/*.xml
 .idea/*.iml
+.idea/preferred-vcs.xml
+
+
 clock.ini
 # Byte-compiled / optimized / DLL files
 __pycache__/
