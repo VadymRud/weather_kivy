@@ -17,7 +17,7 @@ source.include_exts = py,png,jpg,kv,atlas
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
-source.include_patterns = templates/*, fonts/*
+source.include_patterns = templates/*, fonts/*, assets/*
 
 # (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = spec
@@ -48,6 +48,7 @@ requirements = python3crystax, kivy, arrow, pyowm, plyer
 
 # (str) Presplash of the application
 #presplash.filename = %(source.dir)s/data/presplash.png
+presplash.filename = assets/x_va.png
 
 # (str) Icon of the application
 #icon.filename = %(source.dir)s/data/icon.png
