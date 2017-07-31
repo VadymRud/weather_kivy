@@ -2,6 +2,7 @@ AddLocationForm:
 
 <AddLocationForm@BoxLayout>:
     orientation: "vertical"
+    id: add_lock_form
     BoxLayout:
         height: "40dp"
         size_hint_y: None
@@ -11,10 +12,17 @@ AddLocationForm:
         Button:
             id: search_but
             text: "Search"
-            size_hint_x: 40
+            size_hint_x: 30
         Button:
             id: current_loc_but
             text: "Current\nLocation"
-            size_hint_x: 10
+            size_hint_x: 20
+            on_press: add_lock_form.current_location_click()
     ListView:
         item_strings: ["Palo Alto, MX", "Palo Alto, US"]
+    BoxLayout:
+        #height: "40dp"
+        size_hint_y: None
+        TextInput:
+            id: notifications
+            #size_hint_y: 50
