@@ -51,7 +51,7 @@ requirements = python3crystax, kivy, arrow, pyowm, plyer
 presplash.filename = assets/x_va.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+icon.filename = assets/XP_512.png
 
 # (str) Supported orientation (one of landscape, portrait or all)
 orientation = portrait
