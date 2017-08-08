@@ -3,6 +3,37 @@ AddLocationForm:
 <AddLocationForm@BoxLayout>:
     orientation: "vertical"
     id: add_lock_form
+    ActionBar:
+        pos_hint: {'top':1}
+        id: act_bar
+        ActionView:
+            id: act_view
+            use_separator: True
+            ActionPrevious:
+                id: act_prev
+                title: 'Action Bar'
+                with_previous: False
+
+            ActionOverflow:
+            ActionButton:
+                text: 'Btn0'
+                icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+            ActionButton:
+                text: 'Btn1'
+            ActionButton:
+                text: 'Btn2'
+            ActionButton:
+                text: 'Btn3'
+            ActionButton:
+                text: 'Btn4'
+            ActionGroup:
+                text: 'Group1'
+                ActionButton:
+                    text: 'Btn5'
+                ActionButton:
+                    text: 'Btn6'
+                ActionButton:
+                    text: 'Btn7'
     BoxLayout:
         height: "40dp"
         size_hint_y: None

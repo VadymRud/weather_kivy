@@ -2,4 +2,5 @@ kivy
 pyowm
 plyer
 arrow
+https://gitlab.com/kivymd/KivyMD.git
 
