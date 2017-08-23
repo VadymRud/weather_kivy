@@ -25,6 +25,12 @@ class WeatherApp(App):
     kv_directory = 'templates'
     title = 'Х*ва Погода'
 
+    def build(self):
+        self.root.ids.toolbar.title = 'Х*ве меню'
+    #     root.ids.toolbar.title = 'Х*ве меню'
+        #nav_dra_too
+        self.root.ids.nav_dra_too.title = 'Х*ве меню'
+
 
 if __name__ == '__main__':
     WeatherApp().run()
