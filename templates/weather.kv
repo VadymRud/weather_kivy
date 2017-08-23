@@ -1,0 +1,115 @@
+#:import Toolbar kivymd.toolbar.Toolbar
+#:import ThemeManager kivymd.theming.ThemeManager
+#:import MDNavigationDrawer kivymd.navigationdrawer.MDNavigationDrawer
+#:import NavigationLayout kivymd.navigationdrawer.NavigationLayout
+#:import NavigationDrawerDivider kivymd.navigationdrawer.NavigationDrawerDivider
+#:import NavigationDrawerToolbar kivymd.navigationdrawer.NavigationDrawerToolbar
+#:import NavigationDrawerSubheader kivymd.navigationdrawer.NavigationDrawerSubheader
+#:import MDCheckbox kivymd.selectioncontrols.MDCheckbox
+#:import MDSwitch kivymd.selectioncontrols.MDSwitch
+#:import MDList kivymd.list.MDList
+#:import OneLineListItem kivymd.list.OneLineListItem
+#:import TwoLineListItem kivymd.list.TwoLineListItem
+#:import ThreeLineListItem kivymd.list.ThreeLineListItem
+#:import OneLineAvatarListItem kivymd.list.OneLineAvatarListItem
+#:import OneLineIconListItem kivymd.list.OneLineIconListItem
+#:import OneLineAvatarIconListItem kivymd.list.OneLineAvatarIconListItem
+#:import MDTextField kivymd.textfields.MDTextField
+#:import MDSpinner kivymd.spinner.MDSpinner
+#:import MDCard kivymd.card.MDCard
+#:import MDSeparator kivymd.card.MDSeparator
+#:import MDDropdownMenu kivymd.menu.MDDropdownMenu
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import colors kivymd.color_definitions.colors
+#:import SmartTile kivymd.grid.SmartTile
+#:import MDSlider kivymd.slider.MDSlider
+#:import MDTabbedPanel kivymd.tabs.MDTabbedPanel
+#:import MDTab kivymd.tabs.MDTab
+#:import MDProgressBar kivymd.progressbar.MDProgressBar
+#:import MDAccordion kivymd.accordion.MDAccordion
+#:import MDAccordionItem kivymd.accordion.MDAccordionItem
+#:import MDAccordionSubItem kivymd.accordion.MDAccordionSubItem
+#:import MDThemePicker kivymd.theme_picker.MDThemePicker
+#:import MDBottomNavigation kivymd.tabs.MDBottomNavigation
+#:import MDBottomNavigationItem kivymd.tabs.MDBottomNavigationItem
+
+NavigationLayout:
+    id: nav_layout
+    MDNavigationDrawer:
+        id: nav_drawer
+        NavigationDrawerToolbar:
+            title: "Navigation Drawer"
+
+        NavigationDrawerIconButton:
+            icon: 'checkbox-blank-circle'
+            text: "Bottom Sheets"
+            on_release: app.root.ids.scr_mngr.current = 'bottomsheet'
+        NavigationDrawerIconButton:
+            icon: 'checkbox-blank-circle'
+            text: "Buttons"
+            on_release: app.root.ids.scr_mngr.current = 'button'
+
+    BoxLayout:
+        orientation: 'vertical'
+        Toolbar:
+            id: toolbar
+            title: 'KivyMD Kitchen Sink'
+            md_bg_color: app.theme_cls.primary_color
+            background_palette: 'Primary'
+            background_hue: '500'
+            left_action_items: [['menu', lambda x: app.root.toggle_nav_drawer()]]
+            right_action_items: [['dots-vertical', lambda x: app.root.toggle_nav_drawer()]]
+        ScreenManager:
+            id: scr_mngr
+            Screen:
+                name: 'bottomsheet'
+                MDRaisedButton:
+                    text: "Open list bottom sheet"
+                    opposite_colors: True
+                    size_hint: None, None
+                    size: 4 * dp(48), dp(48)
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+                    on_release: app.show_example_bottom_sheet()
+                MDRaisedButton:
+                    text: "Open grid bottom sheet"
+                    opposite_colors: True
+                    size_hint: None, None
+                    size: 4 * dp(48), dp(48)
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+                    on_release: app.show_example_grid_bottom_sheet()
+            Screen:
+                name: 'button'
+                BoxLayout:
+                    size_hint: None, None
+                    size: '88dp', '48dp'
+                    padding: '12dp'
+                    pos_hint: {'center_x': 0.75, 'center_y': 0.8}
+                    MDLabel:
+                        font_style: 'Body1'
+                        theme_text_color: 'Primary'
+                        text: "Disable buttons"
+                        size_hint_x:None
+                        width: '56dp'
+                    MDCheckbox:
+                        id: disable_the_buttons
+                MDIconButton:
+                    icon: 'sd'
+                    pos_hint: {'center_x': 0.25, 'center_y': 0.8}
+                    disabled: disable_the_buttons.active
+                MDFlatButton:
+                    text: 'MDFlatButton'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+                    disabled: disable_the_buttons.active
+                MDRaisedButton:
+                    text: "MDRaisedButton"
+                    elevation_normal: 2
+                    opposite_colors: True
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                    disabled: disable_the_buttons.active
+                MDFloatingActionButton:
+                    id:                    float_act_btn
+                    icon:                'plus'
+                    opposite_colors:    True
+                    elevation_normal:    8
+                    pos_hint:            {'center_x': 0.5, 'center_y': 0.2}
+                    disabled: disable_the_buttons.active
